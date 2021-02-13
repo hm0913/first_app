@@ -1,0 +1,7 @@
+<%= form_with model: @item do |form| %>
+  <h4>
+    登録する
+  </h4>
+  <%= form.text_field :name%>
+  <%= form.submit "登録" %>
+<% end %>
