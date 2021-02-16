@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.all
   end
 
   def new
@@ -18,7 +19,25 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
-    redirect_to root_path
+    if @item.update(item_params)
+      flash[:notice] = "更新が完了しました！"
+      redirect_to root_path
+    else
+      flash[:alert] = "更新が失敗しました！"
+      redirect_to root_path
+    end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.destroy
+      flash[:notice] = "削除が完了しました！"
+      redirect_to root_path
+    else
+      flash[:alert] = "削除が失敗しました！"
+      redirect_to root_path
+    end
+
   end
 
 
