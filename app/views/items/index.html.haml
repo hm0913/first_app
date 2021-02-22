@@ -1,8 +1,7 @@
 = flash[:notice]
 = flash[:alert]
 
-%h1 items#index
-- @items.each do |i|
-  = i.name
 
-  = link_to "削除", item_path(@items.ids), method: :delete
+.wrapper
+  = render 'items/top_page'
+  = render 'items/down_page'

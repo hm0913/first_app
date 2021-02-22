@@ -1,0 +1,75 @@
+.top-page {
+  width: 100vw;
+  height: 100px;
+  background-color: mediumturquoise;
+
+  &__name {
+    width: 160px;
+    height: 70px;
+    font-size: 60px;
+    float: left;
+  }
+
+  &__btn {
+    width: 160px;
+    height: 70px;
+    display: flex;
+    float: right;
+    
+  }
+  
+}
+
+
+.down-page {
+  width: 100vw;
+  height: calc(100vh - 100px);
+  background-color: pink;
+  float: left;
+  
+
+  &__main-page {
+    width: calc(100vw - 300px);
+    height: 721px;
+    background-color: yellow;
+    float: right;
+
+    .form {
+      font-size: 30px;
+    }
+
+    .btn {
+      font-size: 20px;
+    }
+  
+
+      &__list {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+      
+
+        &__box {
+          width: 300px;
+          height: 180px;
+          background-color: red;
+          text-align: center;
+        
+
+          .name {
+            display: flex;
+            
+
+          }
+
+            .tag {
+              width: 70%;
+              flex-direction: column;
+              
+
+            }
+
+        }
+      }
+  }
+}
