@@ -18,7 +18,6 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_params)
     if @item.update(item_params)
       flash[:notice] = "更新が完了しました！"
       redirect_to root_path
@@ -44,7 +43,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :category, :buy_date)
+    params.require(:item).permit(:name, :category, :image)
   end
 
 end

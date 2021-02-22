@@ -1,0 +1,24 @@
+.down-page
+  カテゴリ一覧
+  .down-page__main-page
+    = form_with model: @item, local: true do |f|
+      = f.text_field "", class: "form"
+      = f.submit "検索", class: "btn"
+    .down-page__main-page__list
+      - @items.each do |i|
+        .down-page__main-page__list__box
+          = link_to "#{i.name}", "#", class: "name"
+          = image_tag i.image.url, class: "tag"
+          
+
+
+    -# .main-page__item-list
+    -#   = button_to "登録", new_item_path, method: :get, class: "button"
+    -#   .main-page__item-list__name
+    -#     - @items.each do |i|
+    -#       .main-page__item-list__name__box
+    -#         = link_to "#{i.name}", "#"
+    -#         = image_tag i.image.url, class: "tag"
+    -#         -# 移動する
+    -#         = link_to "編集", edit_item_path(i.id), class: "edit"
+    -#         = link_to "削除", item_path(i.id), method: :delete, data: {confirm: "本当に#{i.name}を削除しますか？"}, class: "delete"

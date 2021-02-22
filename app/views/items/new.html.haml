@@ -1,5 +1,15 @@
-= form_with model: @item do |form|
-  %h4
-    登録する
-  = form.text_field :name
-  = form.submit "登録"
+
+%h3
+  レシピを書く
+
+= form_with model: @item, local: true do |f|
+  %p
+    = f.label :name, "レシピ名"
+    = f.text_field :name
+  %p
+    = f.label :category, "ジャンル"
+    = f.text_field :category
+  %p
+    = f.label :image, "画像"
+    = f.file_field :image
+  = f.submit "登録"
